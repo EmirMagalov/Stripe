@@ -1,0 +1,52 @@
+.basketcard{
+width:700px;
+display:grid;
+grid-template-areas:"block block block block block";
+gap:30px;
+margin:120px 0 0 100px;
+background-color:white;
+padding-right:200px;
+
+}
+
+.basketcard .block{
+margin:20px;
+}
+
+.delbasket button{
+background-color:white;
+border:1px solid red;
+
+}
+
+.totalblock{
+position:fixed;
+top:120px;
+right:300px;
+text-align:center;
+padding:20px 120px 20px 120px;
+background-color:white;
+}
+
+
+
+#custom-pay-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+
+@media screen and (max-width: 1600px) {
+  .totalblock {
+    position: static;
+   display:block;
+   width:200px;
+   margin:100px 0 0 100px;
+  }
+}

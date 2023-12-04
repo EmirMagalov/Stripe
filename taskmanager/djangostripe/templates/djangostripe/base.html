@@ -1,0 +1,65 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="{%static 'css/base.css'%}">
+     <link rel="stylesheet" href="{%static 'css/home.css'%}">
+    <link rel="stylesheet" href="{%static 'css/slug.css'%}">
+    <link rel="stylesheet" href="{%static 'css/basket.css'%}">
+     <link rel="stylesheet" href="{%static 'css/mens.css'%}">
+    <link rel="stylesheet" href="{%static 'css/womens.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+      <script src="https://checkout.stripe.com/checkout.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<div class="navbar">
+    <a class="active" href="{%url 'home'%}">Home</a>
+    <a href="{%url 'mens'%}">Men's</a>
+    <a href="{%url 'womens'%}">Women's</a>
+    <a href="{%url 'basket'%}" class="basket"><i class="fa fa-shopping-basket" aria-hidden="true"></i></a>
+</div>
+
+
+{%block body%}
+
+{%endblock%}
+ <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="" alt="Логотип">
+            </div>
+            <div class="footer-links">
+                <nav>
+                    <ul>
+                        <li><a href="#">Главная</a></li>
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer-social">
+                <p>Мы в социальных сетях:</p>
+                <ul>
+                    <li><a href="#" target="_blank">Facebook</a></li>
+                    <li><a href="#" target="_blank">Twitter</a></li>
+                    <li><a href="#" target="_blank">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Ваше название компании. Все права защищены.</p>
+        </div>
+    </footer>
+
+
+</body>
+<script src="{%static 'js/base.js'%}"></script>
+<script src="{%static 'js/pay.js'%}"></script>
+
+<script src="{%static 'js/slug.js'%}"></script>
+<script src="{%static 'js/basket.js'%}"></script>
+</html>

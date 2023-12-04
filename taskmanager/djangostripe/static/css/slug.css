@@ -1,0 +1,40 @@
+.slugcontainer{
+margin-top:20px;
+display:grid;
+grid-template-areas:"block block";
+justify-content:center;
+gap:120px;
+margin-top:100px;
+margin-bottom:150px;
+}
+
+.slugcontainer img{
+border:1px solid black;
+width:500px;
+}
+
+.sizeblock{
+margin-top:20px;
+}
+.size{
+display:inline;
+margin-top:20px;
+border:none;
+padding:10px;
+background-color:rgb(0,0,0,0.1);
+}
+
+.count button{
+margin-top:20px;
+background-color:white;
+padding:5px 10px 5px 10px;
+}
+.addto{
+margin-top:20px;
+padding:10px 30px 10px 30px;
+background-color:black;
+border:none;
+color:white;
+}
+
+

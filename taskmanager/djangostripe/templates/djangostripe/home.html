@@ -1,0 +1,38 @@
+{%extends 'djangostripe/base.html'%}
+{%load static%}
+{%block body%}
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <img src="{%static 'img/fon.jpg'%}" >
+
+</div>
+
+<div class="mySlides fade">
+  <img src="{%static 'img/fon2.jpg'%}" >
+</div>
+
+<div class="mySlides fade">
+  <img src="{%static 'img/fon3.jpg'%}">
+
+</div>
+
+</div>
+<br>
+
+<div class="title">
+    <h1>Последние поступления</h1>
+
+</div>
+<div class="container">
+    {%for i in cloth%}
+    <a href="{%url 'slug' i.slug%}">
+    <div class="card">
+        <img src="{{i.img.url}}" style="width:100%" alt="">
+        <div class="name">{{i.name}}</div>
+        <div class="price">{{i.price}}$</div>
+    </div>
+        </a>
+    {%endfor%}
+</div>
+{%endblock%}

@@ -1,0 +1,35 @@
+{%extends 'djangostripe/base.html'%}
+
+{%block body%}
+
+<div class="slugcontainer">
+    <div class="block">
+        <img src="{{cloth.img.url}}" alt="">
+    </div>
+    <div class="block">
+        <h1>{{cloth.name}}</h1>
+        <h2>{{cloth.description}}</h2>
+        <p>{{cloth.price}}$</p>
+        <div class="sizeblock">
+        {%for i in cloth.size.all%}
+        <button class="size" data-action="size">{{i.name}}</button>
+        {%endfor%}
+            </div>
+        <div class="count">
+            <button onclick="Minus()">-</button>
+            <button class="num">1</button>
+            <button onclick="Plus()">+</button>
+        </div>
+        <form action="{%url 'session'%}" method="POST" enctype="multipart/form-data">
+            {%csrf_token%}
+            <input type="hidden" value="{{cloth.img.url}}" name="img">
+            <input type="hidden" value="{{cloth.name}}" name="name">
+            <input type="hidden" value="{{cloth.price}}" name="price">
+            <input type="hidden" value="" name="size" class="inputsize">
+            <input type="hidden" name="count" value="1" class="inputcount">
+        <button class="addto">Add to Basket</button>
+            </form>
+    </div>
+</div>
+
+{%endblock%}

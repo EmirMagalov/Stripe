@@ -1,0 +1,57 @@
+{%extends 'djangostripe/base.html'%}
+
+{%block body%}
+{%for i in request.session.basket%}
+<div class="basketblock">
+    <div class="basketcard">
+        <div class="block">
+        <img src="{{i.img}}" style="width:50%;" alt="">
+            </div>
+        <div class="block">
+        <p>{{i.name}}</p>
+        <span class="basketprice">{{i.price}}</span>
+            <span>$</span>
+            <div class="total">
+                <p>Total:</p>
+                <span class="totalprice"> </span>
+                <span>$</span>
+            </div>
+
+            </div>
+        <div class="block">
+        <p class="basketsize">{{i.size}}</p>
+            </div>
+            <div class="block">
+        <p class="basketcount">{{i.count}}</p>
+            </div>
+        <div class="block">
+        <div class="delbasket">
+            <form action="{%url 'delbasket'%}" method="POST">
+                {%csrf_token%}
+                <input type="hidden" value="{{i.name}}" name="name">
+            <p><button><i class="fa fa-trash"></i></button></p>
+                </form>
+        </div>
+            </div>
+    </div>
+</div>
+{%endfor%}
+{%if request.session.basket%}
+<div class="totalblock">
+    <h2>Total</h2>
+    <span class="alltotal"></span>
+    <span>$</span>
+
+    <p> <button id="custom-pay-button">Pay</button></p>
+
+
+
+        </div>
+
+{%else%}
+<div style="margin:200px 0 0 200px;">
+    <h1>add items to cart</h1>
+</div>
+{%endif%}
+
+{%endblock%}
